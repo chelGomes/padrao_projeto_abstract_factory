@@ -1,5 +1,5 @@
 public class CartaoContaPoupanca implements Cartao{
     public  String emitir(){
-        return "Cartao conta corrente";
+        return "Cartao conta poupanca";
     }
 }

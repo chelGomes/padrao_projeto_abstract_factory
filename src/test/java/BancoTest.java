@@ -1,33 +1,33 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BancoTest {
     @Test
     void deveEmitirCartaoContaCorrente() {
-        FabricaAbstrataBanco fabricaBanco = new FabricaContaCorrente();
-        Banco banco = new Banco(fabricaBanco);
-        assertEquals("Cartao Conta Corrente", banco.emitirCartao());
+        FabricaAbstrataBanco fabrica = new FabricaContaCorrente();
+        Banco banco = new Banco(fabrica);
+        assertEquals("Cartao conta corrente", banco.emitirCartao());
     }
 
     @Test
     void deveEmitirCartaoContaPoupanca() {
-        FabricaAbstrataBanco fabricaBanco = new FabricaContaPoupanca();
-        Banco banco = new Banco(fabricaBanco);
-        assertEquals("Cartao Conta Poupanca", banco.emitirCartao());
+        FabricaAbstrataBanco fabrica = new FabricaContaPoupanca();
+        Banco banco = new Banco(fabrica);
+        assertEquals("Cartao conta poupanca", banco.emitirCartao());
     }
 
     @Test
     void deveExpedirContaCorrente() {
-        FabricaAbstrataBanco fabricaBanco = new FabricaContaCorrente();
-        Banco banco = new Banco(fabricaBanco);
+        FabricaAbstrataBanco fabrica = new FabricaContaCorrente();
+        Banco banco = new Banco(fabrica);
         assertEquals("Conta Corrente", banco.expedirConta());
     }
 
     @Test
     void deveExpedirContaPoupanca() {
-        FabricaAbstrataBanco fabricaBanco = new FabricaContaPoupanca();
-        Banco banco = new Banco(fabricaBanco);
+        FabricaAbstrataBanco fabrica = new FabricaContaPoupanca();
+        Banco banco = new Banco(fabrica);
         assertEquals("Conta Poupanca", banco.expedirConta());
     }
 }
